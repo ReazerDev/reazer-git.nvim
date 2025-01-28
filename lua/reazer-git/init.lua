@@ -5,8 +5,9 @@ local conf = require("telescope.config").values
 local M = {}
 
 -- our picker function: colors
-M.colors = function(opts)
-  opts = opts or {}
+function M.status()
+  local opts = {}
+
   pickers.new(opts, {
     prompt_title = "git status",
     finder = finders.new_table {

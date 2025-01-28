@@ -6,6 +6,6 @@ end
 
 return telescope.register_extension {
   exports = {
-    reazer_git = require("reazer-git.nvim")
+    reazer_git = require("reazer-git")
   },
 }

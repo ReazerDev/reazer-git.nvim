@@ -5,7 +5,8 @@ if not has_telescope then
 end
 
 return telescope.register_extension {
+  setup = require('telescope._extensions.reazer_git.config').setup,
   exports = {
-    reazer_git = require("reazer-git").status
-  },
+    reazer_git = require('telescope._extensions.reazer_git.picker').picker
+  }
 }

@@ -4,17 +4,16 @@ local conf = require("telescope.config").values
 
 local M = {}
 
--- our picker function: colors
-function M.status()
-  local opts = {}
+function M.status(options)
+  local status_action = require('reazer-git.actions.status')
 
-  pickers.new(opts, {
-    prompt_title = "git status",
-    finder = finders.new_table {
-      results = { "red", "green", "blue", "test.lua" }
-    },
-    sorter = conf.generic_sorter(opts),
-  }):find()
+  status_action.run(options)
+end
+
+function M.rebase(options)
+  local rebase_action = require('reazer-git.actions.rebase')
+
+  rebase_action.run(options)
 end
 
 return M
